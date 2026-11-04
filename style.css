@@ -1,0 +1,108 @@
+body {
+        font-family: 'Inter', sans-serif;
+}
+
+::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+}
+
+::-webkit-scrollbar-track {
+        background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+        background: rgba(156, 163, 175, 0.4);
+        border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+        background: rgba(156, 163, 175, 0.6);
+}
+
+.calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-weekday {
+        padding: 0.6rem 0.35rem;
+        text-align: center;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #64748b;
+        border-bottom: 1px solid #e2e8f0;
+}
+
+.calendar-day {
+        min-height: 7rem;
+        padding: 0.4rem;
+        border-right: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+        overflow: hidden;
+}
+
+.calendar-day-empty {
+        background: rgba(148, 163, 184, 0.08);
+}
+
+.calendar-day-number {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #475569;
+}
+
+.calendar-ticket {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem;
+        border-radius: 0.375rem;
+        background: #dbeafe;
+        padding: 0.25rem;
+        text-align: left;
+        font-size: 0.65rem;
+        color: #1e40af;
+}
+
+.calendar-ticket:hover {
+        background: #bfdbfe;
+}
+
+.dark .calendar-weekday,
+.dark .calendar-day {
+        border-color: #334155;
+}
+
+.dark .calendar-day-number {
+        color: #cbd5e1;
+}
+
+.dark .calendar-day-empty {
+        background: rgba(15, 23, 42, 0.3);
+}
+
+.dark .calendar-ticket {
+        background: #1e3a8a;
+        color: #dbeafe;
+}
+
+.dark .calendar-ticket:hover {
+        background: #1e40af;
+}
+
+@media (max-width: 640px) {
+        .calendar-day {
+                min-height: 5rem;
+                padding: 0.25rem;
+        }
+
+        .calendar-ticket {
+                display: block;
+                max-height: 2rem;
+                overflow: hidden;
+        }
+}
